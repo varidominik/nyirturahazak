@@ -204,13 +204,20 @@ img { display: block; max-width: 100%; }
   margin: 0 auto;
   text-align: center;
 }
-.hero-eyebrow {
-  font-size: 0.78rem;
+.hero-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.28);
+  backdrop-filter: blur(8px);
+  border-radius: 100px;
+  padding: 8px 18px;
+  font-size: 0.9rem;
   font-weight: 500;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.75);
-  margin-bottom: 16px;
+  color: var(--white);
+  margin-bottom: 20px;
+  letter-spacing: .02em;
 }
 .hero-title {
   font-family: var(--font-serif);
@@ -583,6 +590,10 @@ img { display: block; max-width: 100%; }
   justify-content: center;
   align-items: center;
 }
+.footer-brand { display: flex; flex-direction: column; gap: 3px; }
+.footer-logo { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 600; color: var(--white); }
+.footer-sub { font-size: 0.72rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.35); }
+
 .footer-top-link {
   display: inline-flex;
   align-items: center;
