@@ -143,38 +143,50 @@ document.querySelectorAll('.gsap-up').forEach(el => {
   });
 });
 
-// Kártyák: stagger animáció timeline-ban (ScrollTrigger + stagger kompatibilis megoldás)
+// Kártyák: stagger animáció – fromTo + toArray a megbízható megoldás
 [
-  { trigger: '.about-badges', items: '.badge' },
-  { trigger: '.houses-grid', items: '.gsap-card' },
-  { trigger: '.why-grid', items: '.why-item' },
-].forEach(({ trigger, items }) => {
-  const tl = gsap.timeline({
-    scrollTrigger: { trigger, start: 'top 85%' }
-  });
-  tl.from(items, {
-    opacity: 0, y: 40, duration: 0.7, ease: 'power3.out', stagger: 0.1
-  });
+  { trigger: '.about-badges', selector: '.badge' },
+  { trigger: '.houses-grid', selector: '.gsap-card' },
+  { trigger: '.why-grid', selector: '.why-item' },
+].forEach(({ trigger, selector }) => {
+  const triggerEl = document.querySelector(trigger);
+  if (!triggerEl) return;
+  const els = gsap.utils.toArray(triggerEl.querySelectorAll(selector));
+  if (!els.length) return;
+  gsap.fromTo(els,
+    { opacity: 0, y: 40 },
+    {
+      opacity: 1, y: 0,
+      duration: 0.7, ease: 'power3.out', stagger: 0.12,
+      scrollTrigger: { trigger: triggerEl, start: 'top 82%' }
+    }
+  );
 });
 
 // Galéria grid fotók stagger
-const galleryTl = gsap.timeline({
-  scrollTrigger: { trigger: '.gallery-grid', start: 'top 85%' }
-});
-galleryTl.from('.gallery-grid-item', {
-  opacity: 0, scale: 0.95, duration: 0.6, ease: 'power2.out', stagger: 0.07
-});
+const galleryGridEl = document.querySelector('.gallery-grid');
+if (galleryGridEl) {
+  const galleryItems = gsap.utils.toArray(galleryGridEl.querySelectorAll('.gallery-grid-item'));
+  gsap.fromTo(galleryItems,
+    { opacity: 0, scale: 0.96 },
+    {
+      opacity: 1, scale: 1,
+      duration: 0.6, ease: 'power2.out', stagger: 0.07,
+      scrollTrigger: { trigger: galleryGridEl, start: 'top 85%' }
+    }
+  );
+}
 
 // Kapcsolati módszerek
-gsap.from('.contact-method', {
-  scrollTrigger: {
-    trigger: '.contact-methods',
-    start: 'top 88%',
-    toggleActions: 'play none none none',
-  },
-  opacity: 0,
-  x: -24,
-  duration: 0.65,
-  ease: 'power3.out',
-  stagger: 0.12,
-});
+const contactMethodsEl = document.querySelector('.contact-methods');
+if (contactMethodsEl) {
+  const methodEls = gsap.utils.toArray(contactMethodsEl.querySelectorAll('.contact-method'));
+  gsap.fromTo(methodEls,
+    { opacity: 0, y: 24 },
+    {
+      opacity: 1, y: 0,
+      duration: 0.65, ease: 'power3.out', stagger: 0.12,
+      scrollTrigger: { trigger: contactMethodsEl, start: 'top 88%' }
+    }
+  );
+}
