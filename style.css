@@ -460,6 +460,7 @@ img { display: block; max-width: 100%; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
+  align-items: start;
 }
 .terv-panel {
   background: var(--white);
