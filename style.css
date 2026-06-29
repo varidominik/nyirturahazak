@@ -421,6 +421,13 @@ img { display: block; max-width: 100%; }
   gap: 5px;
   font-size: 0.82rem;
   color: var(--text-muted);
+  margin-bottom: 10px;
+}
+.house-price {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--accent);
   margin-bottom: 18px;
 }
 .house-params {
