@@ -407,7 +407,7 @@ img { display: block; max-width: 100%; }
   border-radius: 100px;
 }
 .featured-tag { background: var(--accent); }
-.sold-card { opacity: 0.55; pointer-events: none; }
+.sold-card { opacity: 0.55 !important; pointer-events: none; }
 .sold-ribbon {
   position: absolute;
   top: 22px;
