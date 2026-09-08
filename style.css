@@ -478,6 +478,37 @@ img { display: block; max-width: 100%; }
   border: 1px solid #d4e6cc;
 }
 
+/* ===== TELEK WIDE KÁRTYA ===== */
+.house-card-wide {
+  margin-top: 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: 420px 1fr;
+}
+.house-image-wide {
+  height: 100%;
+  min-height: 280px;
+  position: relative;
+  background: #c8d5c0 center/cover no-repeat;
+}
+.wide-soon-tag {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: rgba(255,255,255,.92);
+  color: var(--text);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  padding: 5px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+}
+
 /* ===== TERVEK SZEKCIÓ ===== */
 .tervek-section { padding: 100px 0; background: var(--bg); }
 .tervek-grid {
@@ -878,6 +909,8 @@ img { display: block; max-width: 100%; }
 }
 
 @media (max-width: 768px) {
+  .house-card-wide { grid-template-columns: 1fr; }
+  .house-image-wide { min-height: 220px; }
   .tervek-grid { grid-template-columns: 1fr; }
   .about-inner { grid-template-columns: 1fr; }
   .about-badges { grid-template-columns: 1fr 1fr; }
