@@ -480,15 +480,17 @@ img { display: block; max-width: 100%; }
 
 /* ===== TELEK WIDE KÁRTYA ===== */
 .house-card-wide {
-  margin-top: 24px;
+  grid-column: 1 / -1;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow);
+  transition: transform .25s, box-shadow .25s;
   display: grid;
   grid-template-columns: 420px 1fr;
 }
+.house-card-wide:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
 .house-image-wide {
   height: 100%;
   min-height: 280px;
@@ -908,9 +910,16 @@ img { display: block; max-width: 100%; }
   }
 }
 
+@media (max-width: 1024px) {
+  .house-card-wide {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+  }
+  .house-image-wide { height: 220px; min-height: unset; }
+}
+
 @media (max-width: 768px) {
-  .house-card-wide { grid-template-columns: 1fr; }
-  .house-image-wide { min-height: 220px; }
+  .house-image-wide { height: 220px; }
   .tervek-grid { grid-template-columns: 1fr; }
   .about-inner { grid-template-columns: 1fr; }
   .about-badges { grid-template-columns: 1fr 1fr; }
