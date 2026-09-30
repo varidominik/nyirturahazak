@@ -189,12 +189,52 @@ img { display: block; max-width: 100%; }
   padding-top: var(--nav-h);
   overflow: hidden;
 }
-.hero-bg {
+.hero-slides {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(160deg, rgba(26,26,24,.75) 0%, rgba(26,26,24,.45) 55%, rgba(30,50,20,.4) 100%),
-    url("images/ikerhaz-04.jpg") center/cover no-repeat;
+}
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background: center/cover no-repeat;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+}
+.hero-slide.active { opacity: 1; }
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(26,26,24,.75) 0%, rgba(26,26,24,.45) 55%, rgba(30,50,20,.4) 100%);
+}
+.hero-thumbs {
+  position: absolute;
+  right: 28px;
+  bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 2;
+}
+.hero-thumb {
+  width: 64px;
+  height: 48px;
+  border-radius: 7px;
+  background: center/cover no-repeat;
+  border: 2px solid rgba(255,255,255,.25);
+  cursor: pointer;
+  transition: border-color .25s, transform .2s, box-shadow .25s;
+  overflow: hidden;
+  padding: 0;
+}
+.hero-thumb:hover { border-color: rgba(255,255,255,.7); transform: scale(1.06); }
+.hero-thumb.active {
+  border-color: var(--white);
+  box-shadow: 0 2px 12px rgba(0,0,0,.5);
+  transform: scale(1.06);
+}
+@media (max-width: 768px) {
+  .hero-thumbs { right: 14px; bottom: 80px; }
+  .hero-thumb { width: 48px; height: 36px; }
 }
 .hero-content {
   position: relative;

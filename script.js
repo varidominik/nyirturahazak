@@ -116,6 +116,36 @@ galleryOverlay.addEventListener('touchend', e => {
   if (Math.abs(dx) > 50) dx < 0 ? galleryNext() : galleryPrev();
 }, { passive: true });
 
+// ===== HERO SLIDESHOW =====
+const heroSlides = document.querySelectorAll('.hero-slide');
+const heroThumbs = document.querySelectorAll('.hero-thumb');
+let currentSlide = 0;
+let heroTimer;
+
+function setHeroSlide(i) {
+  heroSlides[currentSlide].classList.remove('active');
+  heroThumbs[currentSlide].classList.remove('active');
+  currentSlide = i;
+  heroSlides[currentSlide].classList.add('active');
+  heroThumbs[currentSlide].classList.add('active');
+}
+
+function startHeroTimer() {
+  clearInterval(heroTimer);
+  heroTimer = setInterval(() => {
+    setHeroSlide((currentSlide + 1) % heroSlides.length);
+  }, 5000);
+}
+
+heroThumbs.forEach((thumb, i) => {
+  thumb.addEventListener('click', () => {
+    setHeroSlide(i);
+    startHeroTimer();
+  });
+});
+
+startHeroTimer();
+
 // ===== GSAP ANIMÁCIÓK =====
 gsap.registerPlugin(ScrollTrigger);
 
