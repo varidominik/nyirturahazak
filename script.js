@@ -37,6 +37,8 @@ const galleryImages = [
   'images/ikerhaz-05.jpg',
   'images/ikerhaz-06.jpg',
   'images/ikerhaz-07.jpg',
+  'images/telek-render-01.jpg',
+  'images/telek-render-02.jpg',
 ];
 
 // Build gallery grid
