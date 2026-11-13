@@ -435,7 +435,7 @@ img { display: block; max-width: 100%; }
 .house-image-2 { background-image: url("images/ikerhaz-02.jpg"); background-position: center 40%; }
 .house-image-3 { background-image: url("images/csaladi-haz-render.png"); background-color: #e8e4dc; background-size: contain; background-position: center; }
 .house-image-4 { background-image: url("images/ikerhaz-new-02.jpg"); background-position: center 30%; }
-.house-image-5 { background-image: url("images/ikerhaz-new-01.jpg"); background-position: center 30%; }
+.house-image-5 { background-image: url("images/ikerhaz-new-03.jpg"); background-position: center 30%; }
 .house-badge-tag {
   position: absolute;
   top: 14px; left: 14px;
@@ -453,19 +453,20 @@ img { display: block; max-width: 100%; }
 .param-blur span { filter: blur(4px); user-select: none; }
 .preorder-ribbon {
   position: absolute;
-  top: 22px;
-  right: -32px;
-  width: 120px;
+  top: 20px;
+  right: -34px;
+  width: 140px;
   background: #b8860b;
   color: var(--white);
   text-align: center;
   padding: 7px 0;
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: .12em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   transform: rotate(45deg);
   box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  z-index: 2;
 }
 .sold-ribbon {
   position: absolute;
