@@ -539,6 +539,40 @@ img { display: block; max-width: 100%; }
   border: 1px solid #d4e6cc;
 }
 
+/* ===== ELKELT SÁV ===== */
+.sold-strip {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 5.5rem;
+  padding: 0 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  opacity: 0.38;
+}
+.sold-strip-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.sold-strip-info {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  flex: 1;
+}
+.sold-strip-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  background: #d1b8c0;
+  color: #5a2a35;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
 /* ===== TELEK WIDE KÁRTYA ===== */
 .house-card-wide {
   grid-column: 1 / -1;
@@ -670,7 +704,7 @@ img { display: block; max-width: 100%; }
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 220px);
+  grid-template-rows: repeat(7, 220px);
   gap: 12px;
 }
 .gallery-grid-item {
@@ -694,6 +728,9 @@ img { display: block; max-width: 100%; }
 .gallery-grid-item:nth-child(9) { grid-column: 3 / 5; }
 .gallery-grid-item:nth-child(10) { grid-column: 1 / 3; }
 .gallery-grid-item:nth-child(11) { grid-column: 3 / 5; }
+.gallery-grid-item:nth-child(12) { grid-column: 1 / 3; }
+.gallery-grid-item:nth-child(13) { grid-column: 3 / 5; }
+.gallery-grid-item:nth-child(14) { grid-column: 1 / 3; }
 .gallery-grid-item::after {
   content: '';
   position: absolute;
