@@ -485,6 +485,7 @@ img { display: block; max-width: 100%; }
   box-shadow: 0 2px 8px rgba(0,0,0,.25);
 }
 .house-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+.house-body .btn-card { margin-top: auto; }
 .house-name {
   font-family: var(--font-serif);
   font-size: 1.15rem;
@@ -553,7 +554,7 @@ img { display: block; max-width: 100%; }
 .house-card-wide:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
 .house-image-wide {
   height: 100%;
-  min-height: 280px;
+  min-height: 150px;
   position: relative;
   background: #c8d5c0 center/cover no-repeat;
 }
