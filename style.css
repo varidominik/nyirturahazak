@@ -450,6 +450,7 @@ img { display: block; max-width: 100%; }
 }
 .featured-tag { background: var(--accent); }
 .sold-card { opacity: 0.55 !important; pointer-events: none; }
+.param-blur span { filter: blur(4px); user-select: none; }
 .preorder-ribbon {
   position: absolute;
   top: 22px;
