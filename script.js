@@ -70,6 +70,7 @@ const galleryTotal = document.getElementById('galleryTotal');
 galleryTotal.textContent = galleryImages.length;
 galleryImages.forEach((src, i) => {
   const thumb = document.createElement('img');
+  thumb.loading = 'lazy';
   thumb.src = src;
   thumb.alt = `Látványterv ${i + 1}`;
   thumb.className = 'gallery-thumb' + (i === 0 ? ' active' : '');
